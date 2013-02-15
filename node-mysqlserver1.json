@@ -1,0 +1,10 @@
+{
+  "mysql" : {
+	"server_root_password": "replaceme",
+        "server_repl_password": "replaceme",
+        "server_debian_password": "replaceme",
+	"auto-increment-offset": 1,
+	"auto-increment-increment": 2 	
+  },
+  "run_list": [ "recipe[mysql::server]"]
+}
