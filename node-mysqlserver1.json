@@ -4,7 +4,15 @@
         "server_repl_password": "replaceme",
         "server_debian_password": "replaceme",
 	"auto-increment-offset": 1,
-	"auto-increment-increment": 2 	
+	"auto-increment-increment": 2,
+	"log-slave-updates": true,
+	"relay-log": "/var/lib/mysql/relay.log",
+	"relay-log-info-file": "/var/lib/mysql/relay-log.info",
+	"relay-log-index": "/var/lb/mysql/relay-log.index",
+	"log-bin": "/var/lib/mysql/bin.log",
+	"log-bin-index": "/var/lib/mysql/log-bin.index",
+	"log-error": "/var/log/mysql/log-error.log",
+	"server-id": "1",
   },
   "run_list": [ "recipe[mysql::server]"]
 }
