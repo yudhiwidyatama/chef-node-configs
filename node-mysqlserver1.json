@@ -1,5 +1,9 @@
 {
   "mysql" : {
+	"client": {
+		"packages" : [ "mysql", "mysql-devel", "mysql-client" ]
+	},
+	"version" : 5.5,
 	"server_root_password": "replaceme",
         "server_repl_password": "replaceme",
         "server_debian_password": "replaceme",
@@ -13,7 +17,8 @@
 	"log_bin_index": "/var/lib/mysql/log-bin.index",
 	"log_error": "/var/log/mysql/log-error.log",
 	"server_id": "1",
-	"log_slow_queries" : "/var/log/mysql/slow-query.log"
+	"log_slow_queries" : "/var/log/mysql/slow-query.log",
+	"pid_file" : "/var/lib/mysql/mysql.pid"
   },
-  "run_list": [ "recipe[mysql::server]"]
+  "run_list": [ "recipe[mysql::mariadb_repo]", "recipe[mysql::server]"]
 }
