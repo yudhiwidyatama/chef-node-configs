@@ -13,7 +13,7 @@
 	"log_bin_index": "/var/lib/mysql/log-bin.index",
 	"log_error": "/var/log/mysql/log-error.log",
 	"server_id": "1",
-	"log_slow_queries" : "/var/log/mysql/slow-query.log",
+	"log_slow_queries" : "/var/log/mysql/slow-query.log"
   },
   "run_list": [ "recipe[mysql::server]"]
 }
