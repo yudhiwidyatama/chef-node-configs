@@ -1,0 +1,32 @@
+{
+  "mysql" : {
+	"client": {
+		"packages" : [ "MariaDB-devel", "MariaDB-client" ]
+	},
+	"server": {
+		"packages" : [ "MariaDB-Galera-server" ]
+	},
+	"wsrep_enable": true,
+	"wsrep_cluster_address": "192.168.129.226:4567",
+	"version" : 5.5,
+	"server_root_password": "replaceme",
+        "server_repl_password": "replaceme",
+        "server_debian_password": "replaceme",
+	"auto-increment-offset": 1,
+	"auto-increment-increment": 2,
+	"tunable" : { 
+        "binlog_format" : "row",
+	"log_slave_updates": true,
+	"relay_log": "/var/lib/mysql/relay.log",
+	"relay_log_info_file": "/var/lib/mysql/relay-log.info",
+	"relay_log_index": "/var/lib/mysql/relay-log.index",
+	"log_bin": "/var/lib/mysql/bin.log",
+	"log_bin_index": "/var/lib/mysql/log-bin.index",
+	"log_error": "/var/log/mysql/log-error.log",
+	"server_id": "1",
+	"log_slow_queries" : "/var/log/mysql/slow-query.log"
+	},
+	"pid_file" : "/var/lib/mysql/mysql.pid"
+  },
+  "run_list": [ "recipe[mysql::mariadb_repo]", "recipe[mysql::server]"]
+}
