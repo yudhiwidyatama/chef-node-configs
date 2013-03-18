@@ -8,7 +8,6 @@
 	},
 	"wsrep_enable": true,
 	 "wsrep_cluster_address": "192.168.129.225:4567",
-	"wsrep_replicate_myisam": 1,
 	"version" : 5.5,
 	"server_root_password": "replaceme",
         "server_repl_password": "replaceme",
